@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="title">Register a new account</h1>
+    <h1 class="title">Login</h1>
 
     <div class="mx-auto max-w-screen-sm card">
         <form action="{{ route('login') }}" method="post">

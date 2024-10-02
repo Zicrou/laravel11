@@ -22,8 +22,10 @@
             </div>
             
         @endforeach
-        <div>
-            {{ $posts->links() }}
-        </div>
+    </div>
+
+        
+    <div>
+        {{ $posts->links() }}
     </div>
 </x-layout>
