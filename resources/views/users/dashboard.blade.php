@@ -12,7 +12,7 @@
             @elseif (session('delete'))
                 <x-flashMsg msg="{{ session('delete') }}" bg="bg-red-500"/>
             @endif
-            <form action="{{ route('posts.store') }}" method="post">
+            <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
     
                 {{-- Post Title --}}
@@ -32,6 +32,16 @@
                 @error('body')
                     <p class="error">{{ $message }}</p>
                 @enderror
+
+                {{-- Post Image --}}
+                <div class="mb-4">
+                    <label for="image">Cover photo</label>
+                    <input type="file" name="image" id="image">
+                    
+                    @error('image')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 {{-- Submit Button --}}
             <button class="btn">Create</button>

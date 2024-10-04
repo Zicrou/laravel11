@@ -1,6 +1,14 @@
 @props(['post', 'full' => false ])
 
 <div class="card">
+    {{-- Cover photo --}}
+    <div>
+        @if ($post->image)
+            <img src="{{ asset('storage/' . $post->image)}}" alt="">
+        @else
+            <img src="{{ asset('storage/post_images/default.webp')}}" alt="">
+        @endif
+    </div>
     {{-- Title --}}
     <h2 class="font-bold text-xl">{{ $post->title }}</h2>
 
