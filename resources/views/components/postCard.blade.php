@@ -19,8 +19,6 @@
     </div>
 
     {{-- Body --}}
-
-
     @if ($full)
         <div class="text-sm">
             <span>{{ $post->body }}</span>
