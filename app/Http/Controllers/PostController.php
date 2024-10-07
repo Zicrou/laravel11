@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserSubscribed;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Mail\WelcomeMail;
@@ -30,10 +31,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //Mail::to('mike@email.com')->send(new WelcomeMail(Auth::user()));
         $posts = Post::latest()->paginate(6);
         
-
         return view('posts.index', ['posts' => $posts ]);
     }
 
